@@ -1,12 +1,23 @@
 const http = require('node:http');
-
+const fs = require('node:fs')
 const hostname = '0.0.0.0';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  const filePath = path.join(__dirname, 'dist', 'index.html');
+
+  fs.readFile(filePath, (err, data) => {
+    if(err){
+      res.statusCode = 404;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('not Found \n');
+      return;
+    }
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end(data);
+  });
+  
 });
 
 server.listen(port, hostname, () => {
