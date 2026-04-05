@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/enkhboldzu/IO20260403.git"
   },
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/enkhboldzu/IO20260403/issues"
   },
