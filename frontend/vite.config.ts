@@ -10,9 +10,17 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    host: '0.0.0.0', // Alternatively, set to true
+    port: 3000,       // Optional: specify your port
+    allowedHosts: [
+      'io20260403.boyo.mn'
+    ]
+  }
 })

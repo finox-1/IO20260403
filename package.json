@@ -2,11 +2,19 @@
   "name": "io20260403",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/enkhboldzu/IO20260403#readme",
+  "bugs": {
+    "url": "https://github.com/enkhboldzu/IO20260403/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enkhboldzu/IO20260403.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
