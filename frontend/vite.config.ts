@@ -4,24 +4,30 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
     tailwindcss(),
   ],
-
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
   server: {
-    host: '0.0.0.0', // Alternatively, set to true
-    port: 3000,       // Optional: specify your port
+    host: '0.0.0.0',
+    port: 3000,
     allowedHosts: [
       'io20260403.boyo.mn'
     ]
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        card: 'card.html',
+      }
+    }
   }
 })
