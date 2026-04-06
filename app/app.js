@@ -67,7 +67,7 @@ app.use((err, req, res, next) => {
 const publicVapidKey = "";
 const privateVapidKey = "";
 
-webPush.setVapidDetails("mailto:test@example.com", publicVapidKey, privateVapidKey);
+// webPush.setVapidDetails("mailto:test@example.com", publicVapidKey, privateVapidKey);
 
 const subscriptions = {};
 
@@ -102,7 +102,7 @@ app.post("/sendNotification", async (req, res) => {
   const payload = JSON.stringify({ title, message });
 
   try {
-    await webPush.sendNotification(subscription, payload);
+    // await webPush.sendNotification(subscription, payload);
     res.status(200).json({ message: `Notification sent to ${email}` });
   } catch (err) {
     console.error("Error sending notification:", err);
@@ -119,7 +119,7 @@ app.get("/sendNotification", async (req, res) => {
   const payload = JSON.stringify({ m });
 
   try {
-    await webPush.sendNotification(subscription, payload);
+    // await webPush.sendNotification(subscription, payload);
     res.status(200).json({ message: `Notification sent to $b` });
   } catch (err) {
     console.error("Error sending notification:", err);
