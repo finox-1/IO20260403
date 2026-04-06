@@ -5,7 +5,9 @@ const path = require("path");
 const todoDemoRouter = require("./todoDemo");
 
 router.use("/demo", todoDemoRouter);
-
+router.get("/card", function (req, res) {
+  res.sendFile(path.join(__dirname, "../../dist", "card.html"));
+});
 router.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../../dist", "index.html"));
 });
