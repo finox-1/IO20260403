@@ -4,7 +4,7 @@ const path = require("path");
 const moment = require("moment-timezone");
 
 const app = require("../app/app");
-const attachIo = require("../socket/socket");
+// const attachIo = require("../socket/socket");
 const centralRouter = require("../app/api/router");
 
 // const { scheduleBowsysTodoDueDateJob } = require("../app/middleware/utilities/todoBowsysUtil");
@@ -12,7 +12,7 @@ const centralRouter = require("../app/api/router");
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const PORT = 3001
 const httpServer = http.createServer(app);
-const io = attachIo(httpServer);
+// const io = attachIo(httpServer);
 
 // scheduleBowsysTodoDueDateJob();
 
@@ -24,8 +24,8 @@ const io = attachIo(httpServer);
 app.use("/", centralRouter);
 
 // require("../socket/auctionSocket")(io);  //! devMuuguu: ашиглахгүй тул comment хийв
-require("../socket/internetSocket")(io);
-require("../socket/chatSocket")(io);
+// require("../socket/internetSocket")(io);
+// require("../socket/chatSocket")(io);
 
 httpServer.listen(PORT, "0.0.0.0", () => {
   console.log(moment().tz("Asia/Ulaanbaatar").format("YYYY-MM-DD HH:mm:ss"), `- Listening on port ${PORT}`);
