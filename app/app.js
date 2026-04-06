@@ -47,14 +47,14 @@ app.use(express.static(path.join(__dirname, "../dist")));
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "100mb" }));
 
-app.use(
-  session({
-    secret: process.env.APP_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 600000 },
-  })
-);
+// app.use(
+//   session({
+//     secret: process.env.APP_SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { maxAge: 600000 },
+//   })
+// );
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
