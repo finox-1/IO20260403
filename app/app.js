@@ -127,4 +127,7 @@ app.get("/sendNotification", async (req, res) => {
   }
 });
 
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'))
+})
 module.exports = app;
