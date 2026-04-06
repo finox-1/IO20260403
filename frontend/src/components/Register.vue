@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const fullName = ref('')
 const email = ref('')
 const password = ref('')
-const rememberMe = ref(false)
 </script>
 
 <template>
@@ -11,13 +11,22 @@ const rememberMe = ref(false)
     <div class="w-full max-w-[440px] bg-[#262626] border border-white/10 rounded-2xl p-10 shadow-2xl">
       
       <header class="mb-8 text-left">
-        <h1 class="text-4xl font-serif font-medium text-white mb-2">Welcome back</h1>
-        <p class="text-gray-400">Sign in to your account to continue</p>
+        <h1 class="text-4xl font-serif font-medium text-white mb-2">Create account</h1>
       </header>
 
       <form @submit.prevent class="space-y-6">
         <div class="space-y-2">
-          <label class="block text-xs font-bold uppercase tracking-widest text-gray-400">Email</label>
+          <label class="block text-xs font-bold uppercase tracking-widest text-gray-400">Full Name</label>
+          <input 
+            v-model="fullName"
+            type="text" 
+            placeholder="John Doe"
+            class="w-full bg-[#333333] border border-white/10 rounded-xl py-3 px-4 text-white placeholder-gray-500 outline-none focus:border-indigo-500/50 transition-all"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</label>
           <input 
             v-model="email"
             type="email" 
@@ -36,16 +45,8 @@ const rememberMe = ref(false)
           />
         </div>
 
-        <div class="flex items-center justify-between text-sm">
-          <label class="flex items-center gap-2 cursor-pointer select-none">
-            <input v-model="rememberMe" type="checkbox" class="w-4 h-4 rounded border-white/10 bg-[#333333] accent-indigo-500">
-            <span class="text-xs font-bold uppercase tracking-wider">Remember me</span>
-          </label>
-          <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">Forgot password?</a>
-        </div>
-
         <button class="w-full bg-transparent border border-white/20 hover:bg-white/5 text-white font-medium py-3.5 rounded-xl transition-all active:scale-[0.98]">
-          Sign in
+          Create account
         </button>
 
         <div class="relative flex items-center py-2">
@@ -56,13 +57,13 @@ const rememberMe = ref(false)
 
         <button type="button" class="w-full bg-transparent border border-white/20 hover:bg-white/5 text-white font-medium py-3.5 rounded-xl flex items-center justify-center gap-3 transition-all">
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-5 h-5" alt="Google">
-          Continue with Google
+          Sign up with Google
         </button>
       </form>
 
       <p class="mt-8 text-center text-gray-400 text-sm">
-        Don't have an account? 
-        <router-link to="/register" class="text-indigo-400 hover:text-indigo-300 font-medium">Register</router-link>
+        Already have an account? 
+        <router-link to="/login" class="text-indigo-400 hover:text-indigo-300 font-medium">Sign in</router-link>
       </p>
     </div>
   </div>
@@ -70,5 +71,5 @@ const rememberMe = ref(false)
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
-font-serif { font-family: 'Playfair Display', serif; }
+.font-serif { font-family: 'Playfair Display', serif; }
 </style>
