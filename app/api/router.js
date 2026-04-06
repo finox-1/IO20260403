@@ -9,7 +9,7 @@ const path = require("path");
 // router.use("/demo", todoDemoRouter);
 
 router.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, "../../dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
 
 module.exports = router;
