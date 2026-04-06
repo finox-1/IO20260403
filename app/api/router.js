@@ -8,7 +8,7 @@ const path = require("path");
 
 // router.use("/demo", todoDemoRouter);
 
-router.get('/*splat', (req, res) => {
+router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../../dist", "index.html"));
 });
 
