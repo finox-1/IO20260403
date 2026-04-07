@@ -6,7 +6,7 @@
             <div class="position: absolute; height: 300px;"></div>
             <div class="w-full relative mb-2">
                 <div class="relative">
-                    <img class="w-full min-h-[240px] object-cover" alt="" src="./assets/default-cover.png">
+                    <img class="w-full min-h-[240px] object-cover" alt="" src="../assets/default-cover.png">
                 </div>
                 <div class="relative flex items-center">
                     <div class="absolute left-5 top-1/3 transform -translate-y-[80px] flex justify-center items-center h-32 w-32 bg-black rounded-full border-8 border-black">
