@@ -1,15 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router' //npm install vue-router@4
-import LoginView from '../components/login.vue' 
-import RegisterView from '../components/Register.vue'
-import Card from "../CardApp.vue"
+import LoginView from '../Pages/login.vue' 
+import RegisterView from '../Pages/Register.vue'
+import Card from "../Pages/CardApp.vue"
+import HomeView from '../Pages/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      redirect: '/login'
+      name: '/home',
+      component: HomeView
     },
     {
       path: '/login',
