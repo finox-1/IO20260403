@@ -3,9 +3,9 @@ import { Pool } from "pg";
 const pool = new Pool({
   host: process.env.DB_HOST || "localhost",
   port: process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || "", //bugluh
+  database: process.env.DB_NAME || "cvdb", //bugluh
   user: process.env.DB_USERNAME || "node_user",
-  password: process.env.DB_PASSWORD || "", //bugluh
+  password: process.env.DB_PASSWORD || "MDDvGu7e", //bugluh
 });
 
 (async () => {
